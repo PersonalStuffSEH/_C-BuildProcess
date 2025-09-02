@@ -18,7 +18,7 @@ _start: # _start is the entry point known to the linker
     mov %eax, %edi    # transfer the return of main to the first argument of _exit
     xor %eax, %eax    # per ABI and compatibility with icc
     call _exit        # terminate the program
-// In compilation if you dont link crt0 you get entry point errors (cant find the entry point _start)
-// So if you rename main to _start you mitigate those issues (it wont run anyway though)
-// The same thing happens if you replace `call main` with `call foo` because it looks for foo then
+# In compilation if you dont link crt0 you get entry point errors (cant find the entry point _start)
+# So if you rename main to _start you mitigate those issues (it wont run anyway though)
+# The same thing happens if you replace `call main` with `call foo` because it looks for foo then
 ```
